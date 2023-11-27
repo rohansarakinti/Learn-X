@@ -1,14 +1,17 @@
-import {Button} from "@nextui-org/react";
+import { createBrowserRouter, RouterProvider }  from "react-router-dom";
+import { NextUIProvider } from "@nextui-org/react";
+import Home from "./pages/Home";
 
 export default function App() {
-  return (
-    <>
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-    <Button color='primary'>
-      Button
-    </Button>
-    </>
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <Home />,
+    },
+  ])
+  return(
+    <NextUIProvider>
+      <RouterProvider router={router}></RouterProvider>
+    </NextUIProvider>
   )
 }

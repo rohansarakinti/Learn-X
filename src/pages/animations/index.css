@@ -1,0 +1,17 @@
+@keyframes FadeInBottom {
+    0% {
+        opacity: 0;
+        position: relative;
+        top: 30px;
+    }
+    100%{
+        opacity: 1;
+        position: relative;
+        top: 0px;
+    }
+}
+
+.fadeInBottom {
+    animation-name: FadeInBottom;
+    animation-duration: 2s;
+}
