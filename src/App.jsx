@@ -15,11 +15,13 @@
 //     </NextUIProvider>
 //   )
 // }
-import CourseIcon from "./components/CourseIcon";
+import LandingPage from "./pages/LandingPage";
+
+
 function App() {
   return (
     <div>
-      <CourseIcon></CourseIcon>
+      <LandingPage />
     </div>
   );
 }
