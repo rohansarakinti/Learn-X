@@ -15,13 +15,13 @@
 //     </NextUIProvider>
 //   )
 // }
-import LandingPage from "./pages/LandingPage";
+import SignUpPage from "./pages/SignUpPage.jsx";
 
 
 function App() {
   return (
     <div>
-      <LandingPage />
+      <SignUpPage />
     </div>
   );
 }
