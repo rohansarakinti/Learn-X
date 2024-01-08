@@ -1,28 +1,12 @@
-// import { createBrowserRouter, RouterProvider }  from "react-router-dom";
-// import { NextUIProvider } from "@nextui-org/react";
-// import Home from "./pages/Home";
+import { Route, Routes } from "react-router-dom";
 
-// export default function App() {
-//   const router = createBrowserRouter([
-//     {
-//       path: '/',
-//       element: <Home />,
-//     },
-//   ])
-//   return(
-//     <NextUIProvider>
-//       <RouterProvider router={router}></RouterProvider>
-//     </NextUIProvider>
-//   )
-// }
 import SignUpPage from "./pages/SignUpPage.jsx";
-
 
 function App() {
   return (
-    <div>
-      <SignUpPage />
-    </div>
+    <Routes>
+      <Route path="/" element={<SignUpPage />} />
+    </Routes>
   );
 }
 
