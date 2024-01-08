@@ -37,11 +37,11 @@ export default function LandingPage() {
     <>
       <Navbar />
       <div className="bg-[url('./assets/landing-page-bg.jpg')] h-screen bg-cover bg-center flex justify-center items-center">
-        <div className='flex h-1/5 w-2/6 mr-7 mb-52 flex justify-center'>
+        <div className='flex h-1/5 w-2/6 mr-7 mb-52 justify-center'>
           <div className="bg-[url('./assets/LearnX.png')] h-auto w-full bg-cover bg-center flex justify-center animate-fade-up">
           </div>
         </div>
-        <Button radius="full" size="lg" variant="shadow" color='primary' className='absolute ml-auto mr-10 animate-fade-up'>GET STARTED</Button>
+        <Button radius="full" size="lg" variant="shadow" color='primary' className='absolute ml-auto mr-10 animate-fade-up'onClick={() => {window.location.replace('/login')}}>GET STARTED</Button>
       </div>
       <div className='w-full flex justify-center content-center'>
         <div className=' w-4/5 flex flex-col justify-center items-center'>

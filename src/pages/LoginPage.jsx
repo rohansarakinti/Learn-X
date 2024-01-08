@@ -18,12 +18,12 @@ export default function LoginPage() {
                 </div>
                 <div className=" flex flex-col justify-center items-center gap-5 mt-7">
                     <Button radius="full" size="lg" variant="shadow" color='primary' className='p-7 w-full'>LOGIN</Button>
-                    <p className="text-xl">New to LearnX?<span><a href="/" className="text-xl text-sky-500 hover:text-sky-300 duration-500 underline ml-2">Join Now</a></span></p>
+                    <p className="text-xl">New to LearnX?<span><a href="/signup" className="text-xl text-sky-500 hover:text-sky-300 duration-500 underline ml-2">Join Now</a></span></p>
                 </div>
             </div>
         </div>
         <div className="flex h-full basis-1/2 justify-center items-center">
-            <img src={LearnX} className="bg-cover bg-center w-auto h-4/5 animate-fade-in"></img>
+            <a href="/home"><img src={LearnX} className="bg-cover bg-center w-auto h-4/5 animate-fade-in"></img></a>
         </div>
     </div>
   )

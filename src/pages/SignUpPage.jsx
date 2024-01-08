@@ -15,13 +15,14 @@ export default function SignUpPage() {
                         <Input variant="bordered" type="password" label="Password" ></Input>
                     </div>
                 </div>
-                <div className=" flex flex-col justify-center items-center mt-20">
+                <div className=" flex flex-col justify-center items-center gap-8 mt-10">
                     <Button radius="full" size="lg" variant="shadow" color='primary' className='p-7 w-full'>SIGN UP</Button>
+                    <p className="text-xl">Already have an account?<span><a href="/login" className="text-xl text-sky-500 hover:text-sky-300 duration-500 underline ml-2">Login Now</a></span></p>
                 </div>
             </div>
         </div>
         <div className="flex h-full basis-1/2 justify-center items-center">
-            <img src={LearnX} className="bg-cover bg-center w-auto h-4/5 animate-fade-in"></img>
+            <a href="/home"><img src={LearnX} className="bg-cover bg-center w-auto h-4/5 animate-fade-in"></img></a>
         </div>
     </div>
   )

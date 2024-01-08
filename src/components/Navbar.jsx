@@ -1,17 +1,34 @@
-import { Navbar as Nav, NavbarBrand, NavbarContent, Button } from '@nextui-org/react'
+import { Navbar as Nav, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from '@nextui-org/react'
 
 export default function Navbar() {
   return ( 
     <>
-        <Nav isBordered>
-            <NavbarBrand className='select-none cursor-pointer' onClick={() => {
+        <Nav className='animate-fade-down' isBordered>
+            <NavbarBrand className='cursor-pointer' onClick={() => {
                 window.location.replace("/")
-            }}><img src='src\assets\LearnXIcon.png' width={70} className='mt-2 mr-20'></img></NavbarBrand>
-            <NavbarContent justify='end'>
-                <Button color='primary' onClick={() => {}}>
-                    Login
-                </Button>
+            }}><img src='src\assets\LearnXIcon.png' width={70} className='mt-2'></img>
+            </NavbarBrand>
+            <NavbarContent className=' sm:flex gap-10' justify='center' >
                 
+                <NavbarItem>
+                    <Link color='primary' href='/home'>
+                        Home
+                    </Link>
+                </NavbarItem>
+                <NavbarItem>
+                    <Link color='primary' href='/login'>
+                        Login
+                    </Link>
+                </NavbarItem>
+                
+                
+            </NavbarContent>
+            <NavbarContent justify='end'>
+                <NavbarItem>
+                    <Button as={Link} color="primary" href="/signup" variant="bordered">
+                        Sign Up
+                    </Button>
+                </NavbarItem>
             </NavbarContent>
         </Nav>
     </>
