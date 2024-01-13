@@ -7,6 +7,7 @@ import HeroPage from "./pages/HeroPage.jsx";
 import CoursePage from "./pages/CoursePage.jsx";
 import Upload from "./pages/Upload.jsx";
 import Courses from "./pages/Courses.jsx";
+import Dashboard from "./pages/Dashboard.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
       <Route path="/upload" element={<Upload></Upload>}></Route>
       <Route path="/courses" element={<Courses></Courses>}></Route>
       <Route path="/contact" element={<ContactPage />}></Route>
+      <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
     </Routes>
   );
 }
