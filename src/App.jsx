@@ -5,6 +5,8 @@ import LoginPage from "./pages/LoginPage.jsx";
 import LandingPage from "./pages/LandingPage.jsx";
 import HeroPage from "./pages/HeroPage.jsx";
 import CoursePage from "./pages/CoursePage.jsx";
+import Upload from "./pages/Upload.jsx";
+import Courses from "./pages/Courses.jsx";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/coursePage" element={<CoursePage></CoursePage>}></Route>
+      <Route path="/upload" element={<Upload></Upload>}></Route>
+      <Route path="/courses" element={<Courses></Courses>}></Route>
     </Routes>
   );
 }
