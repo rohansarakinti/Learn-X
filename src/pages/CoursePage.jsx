@@ -1,5 +1,8 @@
 function CoursePage() {
-  return <div></div>;
+  return (
+    <div>
+    </div>
+  )
 }
 
 export default CoursePage;
