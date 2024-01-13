@@ -20,6 +20,11 @@ export default function Navbar() {
                         Login
                     </Link>
                 </NavbarItem>
+                <NavbarItem>
+                    <Link color='primary' href='/contact'>
+                        Contact
+                    </Link>
+                </NavbarItem>
                 
                 
             </NavbarContent>
