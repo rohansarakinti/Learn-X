@@ -31,7 +31,7 @@ export default function LandingPage() {
       <Navbar />
       <div className="bg-[url('./assets/landing-page-bg.jpg')] h-screen bg-cover bg-center flex justify-center items-center">
         <div className="flex h-1/5 w-2/6 mr-7 mb-52 justify-center">
-          <div className="bg-[url('./assets/LearnX.png')] h-auto w-full bg-cover bg-center flex justify-center animate-fade-up"></div>
+          <div className="bg-[url('./assets/LearnX.png')] h-auto w-full bg-cover bg-center flex justify-center animate-fade-up min-w-[22rem]"></div>
         </div>
         <Button
           radius="full"
@@ -48,11 +48,11 @@ export default function LandingPage() {
       </div>
       <div className="w-full flex justify-center content-center">
         <div className=" w-4/5 flex flex-col justify-center items-center">
-          <h3 className="text-5xl">A Variety of Courses...</h3>
+          <h3 className="text-5xl text-center">A Variety of Courses...</h3>
 
-          <div className="gap-8 grid grid-cols-3 justify-center w-full mt-12">
+          <div className="gap-8 grid lg:grid-cols-3 md:grid-cols-2 justify-center w-full mt-12">
             {list.map((item, index) => (
-              <Card shadow="sm" key={index}>
+              <Card shadow="sm" className="min-w-[300px]" key={index}>
                 <CardBody className="overflow-visible p-0">
                   <Image
                     shadow="sm"
@@ -85,7 +85,7 @@ export default function LandingPage() {
       <div className="w-full flex mt-52">
         <div className="w-full flex flex-row">
           <div className="basis-2/5 w-52 h-[600px]">
-            <Card className="w-5/6 h-full ml-7 mt-32"></Card>
+            <Card className="hidden w-5/6 h-full ml-7 mt-32 lg:block"></Card>
           </div>
           <div className="basis-3/5 flex flex-col">
             <h3 className="text-5xl">Why LearnX is Better</h3>
