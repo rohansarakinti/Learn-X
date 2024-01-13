@@ -3,7 +3,9 @@ import Sidebar from "../components/Sidebar";
 
 function CoursePage() {
   return (
+    (
     <div>
+    
       <Sidebar />
       <div className="p-4 sm:ml-64">
         <CourseIconPage
@@ -12,7 +14,8 @@ function CoursePage() {
         ></CourseIconPage>
       </div>
     </div>
-  );
+  )
+  )
 }
 
 export default CoursePage;
