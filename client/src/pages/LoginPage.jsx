@@ -1,8 +1,31 @@
 import { Checkbox, Input, Button } from "@nextui-org/react"
 import LearnX from "../assets/LearnX.png"
+import Cookies from 'universal-cookie';
+import { useState } from "react"
 
+const cookies = new Cookies();
 
 export default function LoginPage() {
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+
+    
+    function handleLogin() {
+        fetch('http://localhost:3000/api/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({email: email, password: password}),
+        })
+        .then((response) => {
+            if (response.status == 200) {
+                cookies.set('token', response.body, { path: '/' });
+                window.location.replace("/dashboard");
+            }
+        })
+    }
+
   return (
     <div className="w-full h-screen flex flex-row">
         <div className="flex h-full basis-full lg:basis-1/2 bg-sky-100 p-20 justify-center content-center">
@@ -11,13 +34,13 @@ export default function LoginPage() {
                     <h3 className="text-5xl">Login</h3>
                     <h1 className="text-xl">Continue your learning experience!</h1>
                     <div className=" flex flex-col w-full h-full gap-7 mt-7">
-                        <Input  variant="bordered" type="email" label="Email" ></Input>
-                        <Input variant="bordered" type="password" label="Password" ></Input>
+                        <Input  variant="bordered" type="email" label="Email" onInput={(e) => setEmail(e.target.value)}></Input>
+                        <Input variant="bordered" type="password" label="Password" onInput={(e) => setPassword(e.target.value)} ></Input>
                         <Checkbox color="primary">Remember Me?</Checkbox>
                     </div>
                 </div>
                 <div className=" flex flex-col justify-center items-center gap-5 mt-7">
-                    <Button radius="full" size="lg" variant="shadow" color='primary' className='p-7 w-full'>LOGIN</Button>
+                    <Button radius="full" size="lg" variant="shadow" color='primary' className='p-7 w-full' onClick={handleLogin}>LOGIN</Button>
                     <p className="text-xl">New to LearnX?<span><a href="/signup" className="text-xl text-sky-500 hover:text-sky-300 duration-500 underline ml-2">Join Now</a></span></p>
                 </div>
             </div>
