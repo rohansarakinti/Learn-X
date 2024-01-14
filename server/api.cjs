@@ -1,12 +1,18 @@
 const express = require('express');
 const { MongoClient, ServerApiVersion} = require('mongodb');
 const config = require('dotenv').config();
+const sha256 = require('sha256');
 
 const app = express();
 const port = 3000;
 
+app.use(express.urlencoded({extended: 'false'}))
+app.use(express.json())
+
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASS;
+
+let client_tokens = [];
 
 console.log("URI: " + `mongodb+srv://${mongoUser}:${mongoPassword}@learnx-cluster.o6zku0d.mongodb.net/?retryWrites=true&w=majority`);
 const client = new MongoClient(`mongodb+srv://${mongoUser}:${mongoPassword}@learnx-cluster.o6zku0d.mongodb.net/?retryWrites=true&w=majority`, {
@@ -17,17 +23,62 @@ const client = new MongoClient(`mongodb+srv://${mongoUser}:${mongoPassword}@lear
     }
 });
 
+
 async function initiateConnection() {
     try {
       await client.connect();
       await client.db("admin").command({ ping: 1 });
-      console.log("Pinged your deployment. You successfully connected to MongoDB!");
+      console.log("Established Connection to Database.");
     } finally {
       await client.close();
     }
 }
 
 initiateConnection().catch(console.dir);
+
+app.post('/api/login', (req, res) => {
+    let email = req.body.email;
+    let password = req.body.password;
+
+    if (email == null || password == null) {
+        res.status(400).send('Bad Request');
+    }
+
+    let hashedPassword = Buffer.from(sha256(password)).toString('base64');
+    client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword}, (err, result) => {
+        if (err) {
+            res.status(500).send('Internal Server Error');
+        } else if (result == null) {
+            res.status(401).send('Unauthorized');
+        } else {
+            res.status(200).send('OK');
+        }
+    });
+});
+
+app.post('/api/register', (req, res) => {
+    let email = req.body.email;
+    let password = req.body.password;
+    let name = req.body.name;
+
+    if (email == null || password == null || name == null) {
+        res.status(400).send('Bad Request');
+    }
+
+    let hashedPassword = Buffer.from(sha256(password)).toString('base64');
+    if (client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword})) {
+        res.status(409).send('Conflict');
+    }
+    else {
+        client.db("LearnX").collection('Users').insertOne({email: email, password: hashedPassword, name: name}, (err, result) => {
+            if (err) {
+                res.status(500).send('Internal Server Error');
+            } else {
+                res.status(200).send('OK');
+            }
+        });
+    }
+})
 
 app.get('/api/status', (req, res) => {
     res.status(200).send('OK');
