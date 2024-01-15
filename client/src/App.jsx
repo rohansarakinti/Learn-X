@@ -13,13 +13,18 @@ import Accounting from "./pages/Accounting.jsx";
 import Calc from "./pages/Calc.jsx";
 import Algebra2 from "./pages/Algebra2.jsx";
 import Geometry from "./pages/Geometry.jsx";
-import PFN from "./pages/PFN.jsx";
-import HighschoolCourse from "./pages/HighschoolCourse.jsx"
+import HighSchool from "./pages/HighSchool.jsx";
+import PersonalFiance from "./pages/PersonalFinance.jsx";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HeroPage />} />
+      <Route path="/algebra2" element={<Algebra2 />} />
+      <Route path="/geometry" element={<Geometry />} />
+      <Route path="/highschool" element={<HighSchool />} />
+      <Route path="/personal-finance" element={<PersonalFiance />} />
+
       <Route path="/accounting" element={<Accounting />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/signup" element={<SignUpPage />} />
@@ -30,10 +35,6 @@ function App() {
       <Route path="/contact" element={<ContactPage />}></Route>
       <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
       <Route path="/calculus" element={<Calc></Calc>}></Route>
-      <Route path="/algebra2" element={<Algebra2></Algebra2>}></Route>
-      <Route path="/geometry" element={<Geometry></Geometry>}></Route>
-      <Route path="/pfn" element={<PFN></PFN>}></Route>
-      <Route path="/highschoolcourse" element={<HighschoolCourse></HighschoolCourse>}></Route>
     </Routes>
   );
 }
