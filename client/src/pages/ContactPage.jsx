@@ -1,5 +1,6 @@
 import { Input, Button } from "@nextui-org/react"
 import Navbar from "../components/Navbar"
+//import Account from "../assets/Account.png"
 
 
 export default function ContactPage() {
