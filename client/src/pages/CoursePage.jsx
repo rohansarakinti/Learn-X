@@ -1,11 +1,12 @@
 import CourseIconPage from "../components/CourseIconPage";
 import Sidebar from "../components/Sidebar";
 import Account from "../assets/Account.png";
-import algebra2 from "client/src/assets/Algebra2.png";
-import highschool from "client/src/assets/Highschool Courses.png";
-import geometry from "client/src/assets/Geometry.png";
-import calc from "client/src/assets/Calc.png";
-import pfn from "client/src/assets/PersonalFinance.png";
+import algebra2 from "../assets/Algebra2.png";
+import highschool from "../assets/Highschool Courses.png";
+import geometry from "../assets/Geometry.png";
+import calc from "../assets/Calc.png";
+import pfn from "../assets/PersonalFinance.png";
+
 
 function CoursePage() {
   const courses = [
