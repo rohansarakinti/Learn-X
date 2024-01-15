@@ -1,7 +1,6 @@
 import PropTypes from "prop-types";
-import LearnX from "../assets/learnx.png";
 
-function CourseIconPage({ title, courseDescription }) {
+function CourseIconPage({ title, courseDescription, imageLink }) {
   return (
     <div>
       <a
@@ -10,7 +9,7 @@ function CourseIconPage({ title, courseDescription }) {
       >
         <img
           className="w-96 h-96 md:h-full md:w-48 md:rounded-none md:rounded-s-lg p-5"
-          src={LearnX}
+          src={imageLink}
           alt=""
         />
         <div className="flex flex-col justify-between p-4 leading-normal">
@@ -28,6 +27,7 @@ function CourseIconPage({ title, courseDescription }) {
 CourseIconPage.propTypes = {
   title: PropTypes.string.isRequired,
   courseDescription: PropTypes.string.isRequired,
+  imageLink: PropTypes.string.isRequired,
 };
 
 export default CourseIconPage;
