@@ -3,7 +3,7 @@ import Logo from "../assets/LearnXIcon.png"
 
 export default function Navbar() {
   return ( 
-    <>
+    <div className='bg-white'>
         <Nav className='animate-fade-down bg-white' isBordered>
             <NavbarBrand className='cursor-pointer' onClick={() => {
                 window.location.replace("/")
@@ -42,6 +42,6 @@ export default function Navbar() {
                 </NavbarItem>
             </NavbarContent>
         </Nav>
-    </>
+    </div>
   )
 }
