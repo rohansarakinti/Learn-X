@@ -9,11 +9,13 @@ import Upload from "./pages/Upload.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import TeacherSignUpPage from "./pages/TeacherSignUp.jsx";
+import Accounting from "./pages/Accounting.jsx";
 
 function App() {
   return (
     <Routes>
       <Route path="/" element={<HeroPage />} />
+      <Route path="/accounting" element={<Accounting />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/signup" element={<SignUpPage />} />
       <Route path="/teachersignup" element={<TeacherSignUpPage />} />
