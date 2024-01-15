@@ -1,8 +1,9 @@
 const express = require('express');
-const { MongoClient, ServerApiVersion} = require('mongodb');
+const { MongoClient, ServerApiVersion, UUID} = require('mongodb');
 const config = require('dotenv').config();
 const sha256 = require('sha256');
 const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const port = 3000;
@@ -52,6 +53,9 @@ app.post('/api/login', (req, res) => {
         res.status(400).send('Bad Request');
     }
 
+    preventSQLInjection(email);
+    preventSQLInjection(password);
+    
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
     client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword}).then((result, err) => {
         if (err) {
@@ -59,9 +63,9 @@ app.post('/api/login', (req, res) => {
         } else if (result == null) {
             res.status(401).send('Unauthorized');
         } else {
-            let token = hashedPassword + email;
-            client_tokens.push(token);
-            res.status(200).send(token);
+            let token = uuidv4(); // Generate a random token
+            client_tokens.push(token); 
+            res.status(200).send(token); // Send the token to the client
         }
     });
 });
