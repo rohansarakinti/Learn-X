@@ -6,6 +6,7 @@ import quizIcon from "../assets/quizIcon.jpg";
 import certifIcon from "../assets/certifIcon.jpg";
 // import MasterHSIcon from "../assets/MasterHS_profile.jpg";
 import { Accordion, AccordionItem } from "@nextui-org/react";
+import Footer from "../components/Footer";
 
 export default function LandingPage() {
   const list = [
@@ -200,6 +201,7 @@ export default function LandingPage() {
           </Accordion>
         </div>
       </div>
+      <Footer />
     </>
   );
 }

@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 const youtubeUrls = [
   "https://www.youtube.com/watch?v=video1",
   "https://www.youtube.com/watch?v=video2",
@@ -5,18 +7,27 @@ const youtubeUrls = [
 ];
 
 function Accounting() {
+  const [progress, setProgress] = useState(0);
+  const progressIncrement = 100 / youtubeUrls.length;
+
+  const handleNext = () => {
+    if (progress + progressIncrement <= 100) {
+      setProgress(progress + progressIncrement);
+    }
+  };
+
   return (
     <div>
       <div
         className="flex w-full h-1.5 bg-gray-200 rounded-full overflow-hidden dark:bg-gray-700"
         role="progressbar"
-        aria-valuenow="25"
+        aria-valuenow={progress}
         aria-valuemin="0"
         aria-valuemax="100"
       >
         <div
           className="flex flex-col justify-center rounded-full overflow-hidden bg-blue-600 text-xs text-white text-center whitespace-nowrap transition duration-500 dark:bg-blue-500"
-          style="width: 25%"
+          style={{ width: `${progress}%` }}
         ></div>
       </div>
       <div
@@ -66,6 +77,7 @@ function Accounting() {
             type="button"
             className="flex justify-center items-center h-full cursor-pointer group focus:outline-none"
             data-carousel-next
+            onClick={handleNext}
           >
             <span className="text-gray-400 hover:text-gray-900 dark:hover:text-white group-focus:text-gray-900 dark:group-focus:text-white">
               <svg
