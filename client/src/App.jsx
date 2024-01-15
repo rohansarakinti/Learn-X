@@ -24,7 +24,6 @@ function App() {
       <Route path="/geometry" element={<Geometry />} />
       <Route path="/highschool" element={<HighSchool />} />
       <Route path="/personal-finance" element={<PersonalFiance />} />
-
       <Route path="/accounting" element={<Accounting />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/signup" element={<SignUpPage />} />
