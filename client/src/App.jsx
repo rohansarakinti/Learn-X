@@ -9,6 +9,7 @@ import Upload from "./pages/Upload.jsx";
 import Courses from "./pages/Courses.jsx";
 import Dashboard from "./pages/Dashboard.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
+import TeacherSignUpPage from "./pages/TeacherSignUp.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route path="/" element={<HeroPage />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/signup" element={<SignUpPage />} />
+      <Route path="/teachersignup" element={<TeacherSignUpPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/coursePage" element={<CoursePage></CoursePage>}></Route>
       <Route path="/upload" element={<Upload></Upload>}></Route>

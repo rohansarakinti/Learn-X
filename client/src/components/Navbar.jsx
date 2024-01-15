@@ -30,6 +30,11 @@ export default function Navbar() {
             </NavbarContent>
             <NavbarContent justify='end'>
                 <NavbarItem>
+                    <NavbarItem>
+                        <Link color='primary' href='/teachersignup'>
+                            For Teachers
+                        </Link>
+                    </NavbarItem>
                     <Button as={Link} color="primary" href="/signup" variant="bordered">
                         Sign Up
                     </Button>
