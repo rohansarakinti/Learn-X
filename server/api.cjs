@@ -29,10 +29,6 @@ const client = new MongoClient(`mongodb+srv://${mongoUser}:${mongoPassword}@lear
     }
 });
 
-function preventSQLInjection(string) {
-    return string.replace(/'/g, "''");
-}
-
 async function initiateConnection() {
     try {
       await client.connect();
@@ -52,9 +48,6 @@ app.post('/api/login', (req, res) => {
     if (email == null || password == null) {
         res.status(400).send('Bad Request');
     }
-
-    preventSQLInjection(email);
-    preventSQLInjection(password);
 
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
     client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword}).then((result, err) => {
@@ -77,8 +70,6 @@ app.post('/api/register', (req, res) => {
     if (email == null || password == null) {
         res.status(400).send('Bad Request');
     }
-    preventSQLInjection(email);
-    preventSQLInjection(password);
 
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
     let userExists = client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword});
