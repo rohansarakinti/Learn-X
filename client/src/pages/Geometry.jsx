@@ -1,5 +1,9 @@
+import ComingSoon from "../components/ComingSoon"
 function Geometry() {
-  return <div></div>;
+  return (
+  <div>
+    <ComingSoon />
+  </div>);
 }
 
 export default Geometry;

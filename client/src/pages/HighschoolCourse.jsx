@@ -1,5 +1,8 @@
+import ComingSoon from "../components/ComingSoon"
 function HighschoolCourse() {
-  return <div></div>;
+  return <div>
+    <ComingSoon />
+  </div>;
 }
 
 export default HighschoolCourse;
