@@ -7,6 +7,7 @@ import geometry from "../assets/Geometry.png";
 import calc from "../assets/Calc.png";
 import pfn from "../assets/PersonalFinance.png";
 import { Link } from "react-router-dom";
+import Footer from "../components/Footer";
 
 function CoursePage() {
   const courses = [
@@ -83,6 +84,7 @@ function CoursePage() {
           </div>
         </div>
       </dialog>
+      <Footer />
     </div>
   );
 }

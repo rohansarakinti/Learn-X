@@ -1,6 +1,6 @@
 import { Input, Button } from "@nextui-org/react"
 import Navbar from "../components/Navbar"
-
+import Footer from "../components/Footer";
 
 export default function ContactPage() {
   return(
@@ -26,6 +26,7 @@ export default function ContactPage() {
                 <Button type="submit" className="py-3 px-5 text-sm font-medium text-center text-white rounded-lg bg-primary sm:w-fit hover:bg-primary-600 duration-300 focus:ring-4 focus:outline-none focus:ring-primary-300 dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800">Send message</Button>
             </form>
         </div>
+        <Footer />
     </section>
     </>
   )

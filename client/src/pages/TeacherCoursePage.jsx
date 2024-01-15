@@ -1,3 +1,5 @@
+import Footer from "../components/Footer";
+
 function TeacherCoursePage() {
   return (
     <div>
@@ -90,6 +92,7 @@ function TeacherCoursePage() {
           </div>
         </div>
       </dialog>
+      <Footer />
     </div>
   );
 }
