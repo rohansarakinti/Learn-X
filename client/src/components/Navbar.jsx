@@ -1,12 +1,13 @@
 import { Navbar as Nav, NavbarBrand, NavbarContent, NavbarItem, Link, Button } from '@nextui-org/react'
+import Logo from "../assets/LearnXIcon.png"
 
 export default function Navbar() {
   return ( 
-    <>
-        <Nav className='animate-fade-down' isBordered>
+    <div className='bg-white'>
+        <Nav className='animate-fade-down bg-white' isBordered>
             <NavbarBrand className='cursor-pointer' onClick={() => {
                 window.location.replace("/")
-            }}><img src='src\assets\LearnXIcon.png' width={70} className='mt-2'></img>
+            }}><img src={Logo} width={70} className='mt-2'></img>
             </NavbarBrand>
             <NavbarContent className=' sm:flex gap-10' justify='center' >
                 
@@ -41,6 +42,6 @@ export default function Navbar() {
                 </NavbarItem>
             </NavbarContent>
         </Nav>
-    </>
+    </div>
   )
 }
