@@ -1,10 +1,32 @@
 import { useState } from "react";
 
+import finalq1 from "../videos/finalq1.mkv";
+import finalq2 from "../videos/finalq2.mkv";
+import finalq3 from "../videos/finalq3.mkv";
+import finalq4 from "../videos/finalq4.mkv";
+import finalq5 from "../videos/finalq5.mkv";
+import finalq6 from "../videos/finalq6.mkv";
+import finalq7 from "../videos/finalq7.mkv";
+
+import video1 from "../videos/2.1.mp4";
+import video2 from "../videos/2.1intro.mkv";
+import video3 from "../videos/2.2.2a.mp4";
+import video4 from "../videos/2.2.2b.mkv";
+import video5 from "../videos/2.2.2c.mkv";
+
 const youtubeUrls = [
-  "https://www.youtube.com/watch?v=Bt4nYxZ5yTw",
-  "https://www.youtube.com/watch?v=D9BvvD86UOk",
-  "https://www.youtube.com/watch?v=j1VK66Z3Kzs",
-  "https://www.youtube.com/watch?v=70y6wu99ch0",
+  finalq1,
+  finalq2,
+  finalq3,
+  finalq4,
+  finalq5,
+  finalq6,
+  finalq7,
+  video1,
+  video2,
+  video3,
+  video4,
+  video5,
 ];
 
 function Calc() {

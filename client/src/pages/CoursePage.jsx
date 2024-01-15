@@ -7,12 +7,11 @@ import geometry from "../assets/Geometry.png";
 import calc from "../assets/Calc.png";
 import pfn from "../assets/PersonalFinance.png";
 
-
 function CoursePage() {
   const courses = [
     {
-      title: "Account",
-      courseDescription: "Learn about Account with LearnX Instructors",
+      title: "Accounting",
+      courseDescription: "Learn about Accounting with LearnX Instructors",
       imageLink: { Account },
       route: "/accounting",
     },

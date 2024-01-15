@@ -5,7 +5,7 @@ function Upload() {
     <div>
       <Sidebar />
       <div className="p-4 ml-64">
-        <h2 className="text-4xl font-extrabold dark:text-white">
+        <h2 className="text-4xl font-extrabold dark:text-white mb-4">
           Upload Your Notes
         </h2>
 
@@ -49,12 +49,14 @@ function Upload() {
             <input id="dropzone-file" type="file" className="hidden" />
           </label>
         </div>
-        <button
-          type="button"
-          className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
-        >
-          Upload Your Notes
-        </button>
+        <div className="flex justify-center">
+          <button
+            type="button"
+            className="mt-10 mb-10 text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+          >
+            Upload Your Notes
+          </button>
+        </div>
         <h2 className="text-4xl font-extrabold dark:text-white">
           Community Notes
         </h2>
