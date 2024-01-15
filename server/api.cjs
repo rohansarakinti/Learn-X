@@ -55,7 +55,7 @@ app.post('/api/login', (req, res) => {
 
     preventSQLInjection(email);
     preventSQLInjection(password);
-    
+
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
     client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword}).then((result, err) => {
         if (err) {
@@ -63,7 +63,7 @@ app.post('/api/login', (req, res) => {
         } else if (result == null) {
             res.status(401).send('Unauthorized');
         } else {
-            let token = uuidv4(); // Generate a random token
+            let token = Buffer.from(sha256(uuidv4())).toString('base64'); // Generate a random token
             client_tokens.push(token); 
             res.status(200).send(token); // Send the token to the client
         }
