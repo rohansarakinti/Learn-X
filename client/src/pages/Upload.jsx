@@ -11,10 +11,10 @@ function Upload() {
 
         <p className="text-left rtl:text-right text-gray-500 dark:text-gray-400 pb-4">
           Upload your notes here. Uploading your notes helps other students
-          learn and can also help you learn Please make sure that your notes are
-          in required format. We appreciate your contribution to the community.
-          We will send an email to you once your notes are approved by our
-          moderators.
+          learn and can also help you learn. Please make sure that your notes
+          are in required format. We appreciate your contribution to the
+          community. We will send an email to you once your notes are approved
+          by our moderators.
         </p>
 
         <div className="flex items-center justify-center w-full">
