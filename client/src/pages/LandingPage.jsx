@@ -4,26 +4,29 @@ import uploadIcon from "../assets/uploadIcon.jpg";
 import videoIcon from "../assets/videoIcon.jpg";
 import quizIcon from "../assets/quizIcon.jpg";
 import certifIcon from "../assets/certifIcon.jpg";
-// import MasterHSIcon from "../assets/MasterHS_profile.jpg";
+import Calc from "../assets/Calc.png";
+import Geometry from "../assets/Geometry.png"
+import Finance from "../assets/PersonalFinance.png"
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Footer from "../components/Footer";
+import cardImgLanding from "../assets/cardImgLanding.jpg"
 
 export default function LandingPage() {
   const list = [
     {
-      title: "Card",
-      img: "",
-      desc: "This is the description",
+      title: "Calculus",
+      img: {Calc},
+      desc: "Use our Calc course!",
     },
     {
-      title: "Card",
-      img: "",
-      desc: "This is the description",
+      title: "Geometry",
+      img: {Geometry},
+      desc: "Use our Geometry course!",
     },
     {
-      title: "Card",
-      img: "",
-      desc: "This is the description",
+      title: "Finance",
+      img: {Finance},
+      desc: "Use our Finance course!",
     },
   ];
 
@@ -86,7 +89,7 @@ export default function LandingPage() {
       <div className="w-full flex mt-52 bg-white">
         <div className="w-full flex flex-row">
           <div className="basis-2/5 w-52 h-[600px]">
-            <Card className="hidden w-5/6 h-full ml-7 mt-32 lg:block"></Card>
+            <Card className="hidden max-w-5/6 w-5/6 h-full ml-7 mt-32 lg:block"><img src={cardImgLanding}></img></Card>
           </div>
           <div className="basis-3/5 flex flex-col">
             <h3 className="text-5xl text-primary-content">Why LearnX is Better</h3>
