@@ -28,7 +28,7 @@ export default function LandingPage() {
   ];
 
   return (
-    <>
+    <div className="bg-white">
       <Navbar />
       <div className="bg-[url('./assets/landing-page-bg.jpg')] h-screen bg-cover bg-center flex justify-center items-center">
         <div className="flex h-1/5 w-2/6 mr-7 mb-52 justify-center">
@@ -47,9 +47,9 @@ export default function LandingPage() {
           GET STARTED
         </Button>
       </div>
-      <div className="w-full flex justify-center content-center">
+      <div className="w-full flex justify-center content-center bg-white">
         <div className=" w-4/5 flex flex-col justify-center items-center">
-          <h3 className="text-5xl text-center">A Variety of Courses...</h3>
+          <h3 className="text-5xl text-center text-primary-content">A Variety of Courses...</h3>
 
           <div className="gap-8 grid lg:grid-cols-3 md:grid-cols-2 justify-center w-full mt-12">
             {list.map((item, index) => (
@@ -83,13 +83,13 @@ export default function LandingPage() {
           </Button>
         </div>
       </div>
-      <div className="w-full flex mt-52">
+      <div className="w-full flex mt-52 bg-white">
         <div className="w-full flex flex-row">
           <div className="basis-2/5 w-52 h-[600px]">
             <Card className="hidden w-5/6 h-full ml-7 mt-32 lg:block"></Card>
           </div>
           <div className="basis-3/5 flex flex-col">
-            <h3 className="text-5xl">Why LearnX is Better</h3>
+            <h3 className="text-5xl text-primary-content">Why LearnX is Better</h3>
             <div className="w-full h-full flex flex-col gap-10 mt-24">
               <div className="flex flex-row w-full h-5 basis-1/4">
                 <div className="basis-1/6">
@@ -97,10 +97,10 @@ export default function LandingPage() {
                 </div>
                 <div className="basis-5/6 flex flex-col ml-7">
                   <div className="basis-1/2">
-                    <h3 className="text-3xl">Videos</h3>
+                    <h3 className="text-3xl text-primary-content">Videos</h3>
                   </div>
                   <div className="basis-1/2">
-                    <h3 className="text-xl">
+                    <h3 className="text-xl text-primary-content">
                       Videos explaining concepts in a simple yet elaborate
                       manner.
                     </h3>
@@ -114,10 +114,10 @@ export default function LandingPage() {
                 </div>
                 <div className="basis-5/6 flex flex-col ml-7">
                   <div className="basis-1/2">
-                    <h3 className="text-3xl">Quizzes</h3>
+                    <h3 className="text-3xl text-primary-content">Quizzes</h3>
                   </div>
                   <div className="basis-1/2">
-                    <h3 className="text-xl">
+                    <h3 className="text-xl text-primary-content">
                       Quizzes to test your knowledge on topics and utilize
                       practice-based learning.
                     </h3>
@@ -131,10 +131,10 @@ export default function LandingPage() {
                 </div>
                 <div className="basis-5/6 flex flex-col ml-7">
                   <div className="basis-1/2">
-                    <h3 className="text-3xl">Uploaded Notes</h3>
+                    <h3 className="text-3xl text-primary-content">Uploaded Notes</h3>
                   </div>
                   <div className="basis-1/2">
-                    <h3 className="text-xl">
+                    <h3 className="text-xl text-primary-content">
                       Have not just teachers, but also peers upload notes to
                       bring in new perspectives on a topic.
                     </h3>
@@ -148,10 +148,10 @@ export default function LandingPage() {
                 </div>
                 <div className="basis-5/6 flex flex-col ml-7">
                   <div className="basis-1/2">
-                    <h3 className="text-3xl">Completion Certificates</h3>
+                    <h3 className="text-3xl text-primary-content">Completion Certificates</h3>
                   </div>
                   <div className="basis-1/2">
-                    <h3 className="text-xl">
+                    <h3 className="text-xl text-primary-content">
                       Receive a certificate on completion to show credibility
                       and proof of mastery.
                     </h3>
@@ -186,7 +186,7 @@ export default function LandingPage() {
         </Button>
       </div> */}
       <div className="w-full flex flex-col p-14 items-center">
-        <h3 className="text-5xl">FAQs</h3>
+        <h3 className="text-5xl text-primary-content">FAQs</h3>
         <div className="w-full flex">
           <Accordion>
             <AccordionItem key="1" aria-label="Accordion 1" title="FAQ 1">
@@ -202,6 +202,6 @@ export default function LandingPage() {
         </div>
       </div>
       <Footer />
-    </>
+    </div>
   );
 }
