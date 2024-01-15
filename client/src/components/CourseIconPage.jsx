@@ -2,16 +2,12 @@ import PropTypes from "prop-types";
 
 function CourseIconPage({ title, courseDescription, imageLink }) {
   return (
-    <div>
+    <div className="mb-3">
       <a
         href="#"
         className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
-        <img
-          className="w-120 h-96 md:h-full md:w-48 md:rounded-none md:rounded-s-lg p-5"
-          src={imageLink}
-          alt=""
-        />
+        <img className="w-100 h-20 p-5" src={imageLink} />
         <div className="flex flex-col justify-between p-4 leading-normal">
           <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
             {title}
