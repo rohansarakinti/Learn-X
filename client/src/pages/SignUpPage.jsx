@@ -25,6 +25,12 @@ export default function SignUpPage() {
             if (response.status == 200) {
                 window.location.replace("/login");
             }
+            else if (response.status == 409){
+                setFormError({
+                    ...formError,
+                    email: "Email already exists."
+                })
+            }
         })
     }
 
@@ -45,7 +51,7 @@ export default function SignUpPage() {
             return;
         }
 
-        if(!email){
+        if(!email || !email.includes("@") || !email.includes(".")){
             setFormError({
                 ...inputError,
                 email:"Enter a valid email address"
@@ -54,27 +60,24 @@ export default function SignUpPage() {
             
         }
 
-        if(!password){
+        if (!password) {
             setFormError({
                 ...inputError,
-                password:"Password should not be empty"
+                password: "Password should not be empty"
             });
             return;
-            
         }
 
-        if(password.length()<8 || password.length()>20 || password.includes(" ") || password.includes(".")){
+        if (password.length < 8 || password.length > 20 || password.includes(" ") || password.includes(".")) {
             setFormError({
                 ...inputError,
-                password:"Invalid Password: 8-20 characters, no spaces or periods"
+                password: "Invalid Password: 8-20 characters, no spaces or periods"
             });
             return;
         }
 
         setFormError(inputError);
         handleSignUp();
-
-
     }
 
   return (
