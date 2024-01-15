@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard.jsx";
 import ContactPage from "./pages/ContactPage.jsx";
 import TeacherSignUpPage from "./pages/TeacherSignUp.jsx";
 import Accounting from "./pages/Accounting.jsx";
+import Calc from "./pages/Calc.jsx";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
       <Route path="/courses" element={<CoursePage></CoursePage>}></Route>
       <Route path="/contact" element={<ContactPage />}></Route>
       <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+      <Route path="/calculus" element={<Calc></Calc>}></Route>
     </Routes>
   );
 }

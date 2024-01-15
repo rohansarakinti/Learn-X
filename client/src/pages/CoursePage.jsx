@@ -6,6 +6,7 @@ import highschool from "../assets/Highschool Courses.png";
 import geometry from "../assets/Geometry.png";
 import calc from "../assets/Calc.png";
 import pfn from "../assets/PersonalFinance.png";
+import { Link } from "react-router-dom";
 
 function CoursePage() {
   const courses = [
@@ -53,13 +54,13 @@ function CoursePage() {
       <Sidebar />
       <div className="p-4 sm:ml-64">
         {courses.map((course, index) => (
-          <CourseIconPage
-            key={index}
-            title={course.title}
-            courseDescription={course.courseDescription}
-            imageLink={course.imageLink}
-            to={course.href}
-          />
+          <Link to={course.route} key={index}>
+            <CourseIconPage
+              title={course.title}
+              courseDescription={course.courseDescription}
+              imageLink={course.imageLink}
+            />
+          </Link>
         ))}
       </div>
       <button
