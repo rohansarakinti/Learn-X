@@ -22,11 +22,14 @@ export default function LoginPage() {
             body: JSON.stringify({email: email, password: password}),
         })
         .then((response) => {
-            if (response.status == 200) {
-                cookies.set('token', response.body, { path: '/' });
-                window.location.replace("/dashboard");
+            if (response.status === 200) {
+                response.text().then((body) => {
+                    const responseBody = body.toString(); // Convert response body to a string
+                    cookies.set('token', responseBody, { path: '/' });
+                    window.location.replace("/dashboard");
+                });
             }
-            else if (response.status == 401){
+            else if (response.status === 401){
                 setFormError({
                     ...formError,
                     badCredentials: "Incorrect email or password."
