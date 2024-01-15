@@ -1,4 +1,5 @@
 import { nextui } from "@nextui-org/react"
+import { daisyUI } from 'daisyui'
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -31,5 +32,5 @@ export default {
     },
   },
   darkMode: "class",
-  plugins: [nextui()],
+  plugins: [nextui(),daisyUI()],
 }
