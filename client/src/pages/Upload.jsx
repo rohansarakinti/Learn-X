@@ -5,14 +5,16 @@ function Upload() {
     <div>
       <Sidebar />
       <div className="p-4 ml-64">
-        <h1 className="text-4xl font-extrabold text-gray-900 pb-4">
-          Upload Notes
-        </h1>
+        <h2 className="text-4xl font-extrabold dark:text-white">
+          Upload Your Notes
+        </h2>
 
         <p className="text-left rtl:text-right text-gray-500 dark:text-gray-400 pb-4">
           Upload your notes here. Uploading your notes helps other students
           learn and can also help you learn Please make sure that your notes are
           in required format. We appreciate your contribution to the community.
+          We will send an email to you once your notes are approved by our
+          moderators.
         </p>
 
         <div className="flex items-center justify-center w-full">
@@ -47,6 +49,15 @@ function Upload() {
             <input id="dropzone-file" type="file" className="hidden" />
           </label>
         </div>
+        <button
+          type="button"
+          className="text-white bg-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-4 focus:ring-blue-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2"
+        >
+          Upload Your Notes
+        </button>
+        <h2 className="text-4xl font-extrabold dark:text-white">
+          Community Notes
+        </h2>
       </div>
     </div>
   );
