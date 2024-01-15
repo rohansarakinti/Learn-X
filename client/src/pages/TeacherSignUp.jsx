@@ -1,7 +1,7 @@
 import { Input, Button } from "@nextui-org/react"
 import LearnX from "../assets/LearnX.png"
 import { useState } from "react"
-import Footer from "../components/Footer";
+
 
 export default function TeacherSignUpPage() {
     const [email, setEmail] = useState("")
@@ -104,7 +104,7 @@ export default function TeacherSignUpPage() {
         <div className="hidden lg:flex h-full basis-1/2 justify-center items-center">
             <a href="/home"><img src={LearnX} className="bg-cover bg-center w-auto h-4/5 animate-fade-in"></img></a>
         </div>
-        <Footer />
+        
     </div>
   )
 }
