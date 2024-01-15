@@ -8,7 +8,7 @@ function CourseIconPage({ title, courseDescription, imageLink }) {
         className="flex flex-col items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-full hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
-          className="w-96 h-96 md:h-full md:w-48 md:rounded-none md:rounded-s-lg p-5"
+          className="w-120 h-96 md:h-full md:w-48 md:rounded-none md:rounded-s-lg p-5"
           src={imageLink}
           alt=""
         />
