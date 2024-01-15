@@ -73,12 +73,10 @@ app.post('/api/register', (req, res) => {
     if (email == null || password == null) {
         res.status(400).send('Bad Request');
     }
+    preventSQLInjection(email);
+    preventSQLInjection(password);
 
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
-    
-    preventSQLInjection(email);
-    preventSQLInjection(hashedPassword);
-
     let userExists = client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword});
 
     userExists.then((result) => {
