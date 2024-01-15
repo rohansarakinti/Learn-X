@@ -20,7 +20,7 @@ export default function TeacherSignUpPage() {
             headers: {
                 'Content-Type': 'application/json',
             },
-            body: JSON.stringify({email: email, password: password}),
+            body: JSON.stringify({email: email, password: password, isTeacher: true}),
         })
         .then((response) => {
             if (response.status == 200) {

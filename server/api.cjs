@@ -14,7 +14,7 @@ app.use(express.json())
 const mongoUser = process.env.MONGO_USER;
 const mongoPassword = process.env.MONGO_PASS;
 
-let client_tokens = [];
+let client_tokens = new Map(); 
 
 app.use(cors({
     origin: '*'
@@ -41,6 +41,32 @@ async function initiateConnection() {
 
 initiateConnection().catch(console.dir);
 
+app.get('/api/isTeacher', (req, res) => {
+    let token = req.headers.token; 
+    if (token == null) {
+        res.status(400).send('Bad Request');
+    }
+
+    if (client_tokens.has(token)) {
+        res.status(200).send(client.isTeacher == true ? true : false);
+    }
+}); 
+
+app.get('/api/checkTokenValid', (req, res) => {
+    let token = req.headers.token; 
+    if (token == null) {
+        res.status(400).send('Bad Request');
+    }
+
+    if (client_tokens.has(token)) {
+        res.status(200).send('OK');
+    }
+    else 
+    {
+        res.status(401).send('Unauthorized');
+    }
+})
+
 app.post('/api/login', (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
@@ -56,8 +82,8 @@ app.post('/api/login', (req, res) => {
         } else if (result == null) {
             res.status(401).send('Unauthorized');
         } else {
-            let token = Buffer.from(sha256(uuidv4())).toString('base64'); // Generate a random token
-            client_tokens.push(token); 
+            let token = Buffer.from(sha256(hashedPassword)).toString('base64'); // Generate a random token
+            client_tokens.set(token, result.isTeacher); // Store the token in the map
             res.status(200).send(token); // Send the token to the client
         }
     });
@@ -66,13 +92,14 @@ app.post('/api/login', (req, res) => {
 app.post('/api/register', (req, res) => {
     let email = req.body.email;
     let password = req.body.password;
+    let isTeacher = req.body.isTeacher;
 
     if (email == null || password == null) {
         res.status(400).send('Bad Request');
     }
 
     let hashedPassword = Buffer.from(sha256(password)).toString('base64');
-    let userExists = client.db("LearnX").collection('Users').findOne({email: email, password: hashedPassword});
+    let userExists = client.db("LearnX").collection('Users').findOne({email: email});
 
     userExists.then((result) => {
         console.log(result);
@@ -80,7 +107,7 @@ app.post('/api/register', (req, res) => {
             res.status(409).send('Conflict');
         }
         else {
-            client.db("LearnX").collection('Users').insertOne({email: email, password: hashedPassword}).then((result) => {
+            client.db("LearnX").collection('Users').insertOne({email: email, password: hashedPassword, isTeacher: isTeacher == true ? true: false}).then((result) => {
                 res.status(200).send('OK');
             });
         }
