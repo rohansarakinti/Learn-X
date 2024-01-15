@@ -9,7 +9,10 @@ export default function LoginPage() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
-    
+    const [formError, setFormError] = useState({
+        "badCredentials": ""
+    });
+
     function handleLogin() {
         fetch('http://localhost:3000/api/login', {
             method: 'POST',
@@ -23,6 +26,12 @@ export default function LoginPage() {
                 cookies.set('token', response.body, { path: '/' });
                 window.location.replace("/dashboard");
             }
+            else if (response.status == 401){
+                setFormError({
+                    ...formError,
+                    badCredentials: "Incorrect email or password."
+                })
+            }
         })
     }
 
@@ -35,6 +44,7 @@ export default function LoginPage() {
                     <h1 className="text-xl">Continue your learning experience!</h1>
                     <div className=" flex flex-col w-full h-full gap-7 mt-7">
                         <Input  variant="bordered" type="email" label="Email" onInput={(e) => setEmail(e.target.value)}></Input>
+                        <p className="text-red-600">{formError.badCredentials}</p>
                         <Input variant="bordered" type="password" label="Password" onInput={(e) => setPassword(e.target.value)} ></Input>
                         <Checkbox color="primary">Remember Me?</Checkbox>
                     </div>
