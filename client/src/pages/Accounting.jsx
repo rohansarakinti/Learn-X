@@ -1,9 +1,10 @@
 import { useState } from "react";
 
 const youtubeUrls = [
-  "https://www.youtube.com/watch?v=video1",
-  "https://www.youtube.com/watch?v=video2",
-  "https://www.youtube.com/watch?v=video3",
+  "https://www.youtube.com/watch?v=Bt4nYxZ5yTw",
+  "https://www.youtube.com/watch?v=D9BvvD86UOk",
+  "https://www.youtube.com/watch?v=j1VK66Z3Kzs",
+  "https://www.youtube.com/watch?v=70y6wu99ch0",
 ];
 
 function Accounting() {
