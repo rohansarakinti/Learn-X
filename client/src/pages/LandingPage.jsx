@@ -1,12 +1,9 @@
-import { Button, Card, CardBody, Image, CardFooter } from "@nextui-org/react";
+import { Button, Card, CardBody,CardFooter, Image } from "@nextui-org/react";
 import Navbar from "../components/Navbar";
 import uploadIcon from "../assets/uploadIcon.jpg";
 import videoIcon from "../assets/videoIcon.jpg";
 import quizIcon from "../assets/quizIcon.jpg";
 import certifIcon from "../assets/certifIcon.jpg";
-import Calc from "../assets/Calc.png";
-import Geometry from "../assets/Geometry.png"
-import Finance from "../assets/PersonalFinance.png"
 import { Accordion, AccordionItem } from "@nextui-org/react";
 import Footer from "../components/Footer";
 import cardImgLanding from "../assets/cardImgLanding.jpg"
@@ -15,18 +12,18 @@ export default function LandingPage() {
   const list = [
     {
       title: "Calculus",
-      img: {Calc},
+      img: "https://www.pexels.com/photo/1-1-3-text-on-black-chalkboard-374918/",
       desc: "Use our Calc course!",
     },
     {
       title: "Geometry",
-      img: {Geometry},
+      img:"",
       desc: "Use our Geometry course!",
     },
     {
       title: "Finance",
-      img: {Finance},
-      desc: "Use our Finance course!",
+      img: "",
+      desc: "Use our Algebra 2 course!",
     },
   ];
 
@@ -58,14 +55,14 @@ export default function LandingPage() {
             {list.map((item, index) => (
               <Card shadow="sm" className="min-w-[300px]" key={index}>
                 <CardBody className="overflow-visible p-0">
-                  <Image
-                    shadow="sm"
+                  {/*<Image
                     radius="lg"
-                    width="100%"
                     alt={item.title}
+                    width={100}
                     className="w-full object-cover h-[350px]"
                     src={item.img}
-                  />
+                  />*/}
+                  <img src={item.img} className="w-full object-cover h-[350px]"></img>
                 </CardBody>
                 <CardFooter className="text-small justify-between">
                   <b>{item.title}</b>
