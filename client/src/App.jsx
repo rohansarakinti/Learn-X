@@ -13,7 +13,7 @@ import Accounting from "./pages/Accounting.jsx";
 import Calc from "./pages/Calc.jsx";
 import Algebra2 from "./pages/Algebra2.jsx";
 import Geometry from "./pages/Geometry.jsx";
-import HighSchool from "./pages/HighSchool.jsx";
+import HighSchool from "./pages/HighSchoolCourse.jsx";
 import PersonalFiance from "./pages/PersonalFinance.jsx";
 
 function App() {
