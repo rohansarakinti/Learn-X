@@ -13,8 +13,8 @@ import Accounting from "./pages/Accounting.jsx";
 import Calc from "./pages/Calc.jsx";
 import Algebra2 from "./pages/Algebra2.jsx";
 import Geometry from "./pages/Geometry.jsx";
-import HighSchool from "./pages/HighSchoolCourse.jsx";
-import PersonalFiance from "./pages/PFN.jsx";
+import HighschoolCourse from "./pages/HighschoolCourse.jsx";
+import PFN from "./pages/PFN.jsx";
 
 function App() {
   return (
@@ -22,8 +22,8 @@ function App() {
       <Route path="/" element={<HeroPage />} />
       <Route path="/algebra2" element={<Algebra2 />} />
       <Route path="/geometry" element={<Geometry />} />
-      <Route path="/highschool" element={<HighSchool />} />
-      <Route path="/personal-finance" element={<PersonalFiance />} />
+      <Route path="/highschool" element={<HighschoolCourse />} />
+      <Route path="/personal-finance" element={<PFN />} />
       <Route path="/accounting" element={<Accounting />} />
       <Route path="/home" element={<LandingPage />} />
       <Route path="/signup" element={<SignUpPage />} />
